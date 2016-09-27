@@ -38,6 +38,10 @@ function ImageExplorerBlock(runtime, element) {
 
     /* reveal feedback action */
     $(element).find('.image-explorer-hotspot').on('click', function(eventObj) {
+      $(".hotspot-close").remove();
+      $(this).append("<div class='hotspot-close'></div>");
+      $(".image-explorer-hotspot").removeClass("active-hotspot");
+      $(this).addClass("active-hotspot");
       if (eventObj.target != this)
         return; // User clicked on the feedback popup, which is a child of the hotspot.
       eventObj.stopPropagation();
@@ -112,6 +116,8 @@ function ImageExplorerBlock(runtime, element) {
       var close_btn = ".image-explorer-close-reveal";
       var clicked_outside_feedback = (target.closest('.image-explorer-hotspot-reveal').length === 0);
       if (target.is(close_btn) || clicked_outside_feedback) {
+        $(".image-explorer-hotspot").removeClass("active-hotspot");
+        $(".hotspot-close").remove();
         close_feedback();
         eventObj.preventDefault();
         eventObj.stopPropagation();

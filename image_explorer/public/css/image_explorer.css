@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700';
+
 .image-explorer-description {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -9,7 +11,6 @@
 
 .image-explorer-hotspot-reveal {
     position: absolute;
-    background-color: rgba(102, 165, 181, 0.90);
     color: #000000;
     left: 100%;
     top: 25%;
@@ -17,6 +18,10 @@
     display: none;
     overflow-y: auto;
     cursor: default;
+
+    border-radius: 5px;
+    background-color: #3e51b5;
+    box-shadow: 0.7px 3.9px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 .image-explorer-hotspot-content-wrapper {
@@ -30,19 +35,32 @@
 }
 
 .image-explorer-hotspot-reveal-header {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
 }
 
 .image-explorer-wrapper div.image-explorer-hotspot {
     background: url("/static/images/image-explorer-hotspot-sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    width: 41px;
-    height: 41px;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
     display: block;
     text-decoration: none;
     -webkit-transition: all 0.0s linear 0s;
     -moz-transition: all 0.0s linear 0s;
     transition: all 0.0s linear 0s;
+}
+
+.image-explorer-wrapper div.image-explorer-hotspot .hotspot-close{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;    
+}
+
+.image-explorer-wrapper div.image-explorer-hotspot.active-hotspot, .image-explorer-wrapper div.image-explorer-hotspot.active-hotspot:hover {
+    background-position: 0px -106px;
 }
 
 div.image-explorer-hotspot a{
@@ -52,16 +70,21 @@ div.image-explorer-hotspot a{
 }
 
 .image-explorer-wrapper div.image-explorer-hotspot:hover {
-    background-position: 0px -43px
+    background-position: 0px -53px;
+    cursor: pointer;
 }
 
 div.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hotspot-reveal-header p {
     margin: 10px 0px 10px 20px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 .image-explorer-hotspot-reveal-body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    color: #fff
 }
 
 .image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hotspot-reveal-body ul {
@@ -73,6 +96,7 @@ div.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hotspo
 }
 
 .image-explorer-close-reveal {
+    display: none;
     /* background: url("../images/image-explorer-reveal-close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); */
     float: right;
     margin-right: 8px;
