@@ -26,7 +26,7 @@
 
 .image-explorer-hotspot-content-wrapper {
     color: #ffffff;
-    margin: 35px 15px 15px 15px;
+    margin: 20px;
 }
 
 .image-explorer-hotspot-reveal.active {
@@ -75,7 +75,7 @@ div.image-explorer-hotspot a{
 }
 
 div.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hotspot-reveal-header p {
-    margin: 10px 0px 10px 20px;
+    margin: 10px 0px;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
